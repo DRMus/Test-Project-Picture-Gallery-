@@ -1,183 +1,174 @@
 .paginator {
-    display: grid;
-    grid-template-rows: 1fr 2fr;
-    .Pagination {
-        grid-row: 1;
-        display: flex;
-        flex-direction: row;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  .Pagination {
+    grid-row: 1;
+    display: flex;
+    flex-direction: row;
 
-        .PaginationPage {
-            width: 3vw;
-            height: 3vw;
-            border: 1px solid black;
-            font-size: 1.2vw;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            outline: none;
-            background-color: white;
+    .PaginationPage {
+      width: 3vw;
+      height: 3vw;
+      border: 1px solid black;
+      font-size: 1.2vw;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      background-color: white;
 
-            
+      &--dark {
+        border-color: white;
+        background-color: black;
+        color: white;
 
-            &--dark {
-                border-color: white;
-                background-color: black;
-                color: white;
+        &[disabled] {
+          border-color: rgba(255, 255, 255, 0.3);
 
-                &[disabled]{
-                    border-color: rgba(255, 255, 255, 0.3);
-
-                    svg {
-                        path {
-                            fill: rgba(255, 255, 255, 0.3);
-                        }
-                    }
-                }
-
-                &:hover {
-                    background-color: #464646;
-                }
+          svg {
+            path {
+              fill: rgba(255, 255, 255, 0.3);
             }
-
-            &[disabled]{
-                &[class="PaginationPage"] {
-                    border-color: rgba(0, 0, 0, 0.3);
-
-                    svg {
-                        path {
-                            fill: rgba(0, 0, 0, 0.3);
-                        }
-                    }
-                }
-            }
-
-            svg {
-                transform: scale(2);
-            }
-
-            &:hover[class="PaginationPage"] {
-                background-color: #EDEDED;
-            }
-
-            &:hover[disabled] {
-                background-color: transparent;
-            }
-
-            &:first-child {
-                border-radius: 0.5vw 0 0 0.5vw;
-            }
-
-            &:last-child {
-                border-radius: 0 0.5vw 0.5vw 0;
-            }
-
-            &.PaginationPageWithActive {
-                color: white;
-                background-color: black;
-
-                &--dark {
-                    color: black;
-                    background-color: white;
-                }
-    
-
-            }
+          }
         }
 
-        
+        &:hover {
+          background-color: #464646;
+        }
+      }
+
+      &[disabled] {
+        &[class="PaginationPage"] {
+          border-color: rgba(0, 0, 0, 0.3);
+
+          svg {
+            path {
+              fill: rgba(0, 0, 0, 0.3);
+            }
+          }
+        }
+      }
+
+      svg {
+        transform: scale(2);
+      }
+
+      &:hover[class="PaginationPage"] {
+        background-color: #ededed;
+      }
+
+      &:hover[disabled] {
+        background-color: transparent;
+      }
+
+      &:first-child {
+        border-radius: 0.5vw 0 0 0.5vw;
+      }
+
+      &:last-child {
+        border-radius: 0 0.5vw 0.5vw 0;
+      }
+
+      &.PaginationPageWithActive {
+        color: white;
+        background-color: black;
+
+        &--dark {
+          color: black;
+          background-color: white;
+        }
+      }
     }
+  }
 }
 
 @media (max-width: 1024px) {
-    .paginator {
-        .Pagination {
-            .PaginationPage {
-                width: 3.5vw;
-                height: 3.5vw;
-                font-size: 2vw;
+  .paginator {
+    .Pagination {
+      .PaginationPage {
+        width: 3.5vw;
+        height: 3.5vw;
+        font-size: 2vw;
 
-                &:first-child {
-                    border-radius: 1vw 0 0 1vw;
-                }
-    
-                &:last-child {
-                    border-radius: 0 1vw 1vw 0;
-                }
-            }
+        &:first-child {
+          border-radius: 1vw 0 0 1vw;
         }
+
+        &:last-child {
+          border-radius: 0 1vw 1vw 0;
+        }
+      }
     }
+  }
 }
 
 @media (max-width: 768px) {
-    .paginator {
-        .Pagination {
-            .PaginationPage {
-                width: 5vw;
-                height: 5vw;
-                font-size: 2.5vw;
+  .paginator {
+    .Pagination {
+      .PaginationPage {
+        width: 5vw;
+        height: 5vw;
+        font-size: 2.5vw;
 
-                &:first-child {
-                    border-radius: 1vw 0 0 1vw;
-                }
-    
-                &:last-child {
-                    border-radius: 0 1vw 1vw 0;
-                }
-
-                svg {
-                    transform: scale(1.5);
-                }
-            }
+        &:first-child {
+          border-radius: 1vw 0 0 1vw;
         }
+
+        &:last-child {
+          border-radius: 0 1vw 1vw 0;
+        }
+
+        svg {
+          transform: scale(1.5);
+        }
+      }
     }
+  }
 }
 
-
 @media (max-width: 510px) {
-    .paginator {
-        .Pagination {
-            .PaginationPage {
-                font-size: 2.5vw;
+  .paginator {
+    .Pagination {
+      .PaginationPage {
+        font-size: 2.5vw;
 
-                &:first-child {
-                    border-radius: 1vw 0 0 1vw;
-                }
-    
-                &:last-child {
-                    border-radius: 0 1vw 1vw 0;
-                }
-
-                svg {
-                    transform: scale(1);
-                }
-            }
+        &:first-child {
+          border-radius: 1vw 0 0 1vw;
         }
+
+        &:last-child {
+          border-radius: 0 1vw 1vw 0;
+        }
+
+        svg {
+          transform: scale(1);
+        }
+      }
     }
+  }
 }
 
 @media (max-width: 320px) {
-    .paginator {
-        .Pagination {
-            .PaginationPage {
-                width: 12vw;
-                height: 12vw;
-                font-size: 5.5vw;
+  .paginator {
+    .Pagination {
+      .PaginationPage {
+        width: 12vw;
+        height: 12vw;
+        font-size: 5.5vw;
 
-                &:first-child {
-                    border-radius: 1.5vw 0 0 1.5vw;
-                }
-    
-                &:last-child {
-                    border-radius: 0 1.5vw 1.5vw 0;
-                }
-
-                svg {
-                    transform: scale(1.5);
-                }
-            }
-
-            
+        &:first-child {
+          border-radius: 1.5vw 0 0 1.5vw;
         }
+
+        &:last-child {
+          border-radius: 0 1.5vw 1.5vw 0;
+        }
+
+        svg {
+          transform: scale(1.5);
+        }
+      }
     }
+  }
 }

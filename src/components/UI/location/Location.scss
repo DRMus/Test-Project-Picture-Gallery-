@@ -1,23 +1,19 @@
 .custom-select {
+  &__control {
+    outline: none !important;
+    box-shadow: none !important;
 
-    &__control {
-        outline: none !important;
-        box-shadow: none !important;
-
-        &--menu-is-open {
-            // border-radius: 0.5vw 0.5vw 0 0 !important;
-            border-bottom: none !important;
-        }
+    &--menu-is-open {
+      border-bottom: none !important;
     }
+  }
 
-    &__menu {
-        // border-radius: 0 0 0.5vw 0.5vw !important;
-        box-shadow: none !important;
-        margin: 0 !important;
-    }
+  &__menu {
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
 
-    &__option {
-        cursor: pointer !important;
-    }
-    
+  &__option {
+    cursor: pointer !important;
+  }
 }

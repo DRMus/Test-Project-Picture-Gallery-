@@ -1,270 +1,269 @@
 @keyframes slideMenu {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes darkVersion {
-    0% {
-        background-color: #fff;
-        color: black;
-        border-color: #000;
-    }
-    100% {
-        background-color: #000;
-        color: white;
-        border-color: #fff;
-    }
+  0% {
+    background-color: #fff;
+    color: black;
+    border-color: #000;
+  }
+  100% {
+    background-color: #000;
+    color: white;
+    border-color: #fff;
+  }
 }
 
 .custom_range {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 
-    &.range_is_open {
-        border-radius: 0.5vw 0.5vw 0 0;
-        border-bottom: white;
+  &.range_is_open {
+    border-radius: 0.5vw 0.5vw 0 0;
+    border-bottom: white;
+  }
+
+  &.range__dark {
+    animation: darkVersion 0.5s ease-in-out;
+    border-color: white;
+    background-color: black;
+
+    .range__placeholder {
+      &__value {
+        color: white;
+      }
+
+      &__svg {
+        fill: rgba(255, 255, 255, 0.3);
+      }
     }
 
-    &.range__dark {
-        animation: darkVersion 0.5s ease-in-out;
-        border-color: white;
-        background-color: black;
+    .range__open {
+      background-color: black;
+      border-color: white;
 
-        .range__placeholder {
-            &__value {
-                color: white;
-            }
-
-            &__svg {
-                fill: rgba(255, 255, 255, 0.3);
-            }
+      &__inputs {
+        &__after {
+          background-color: white;
         }
 
-        .range__open {
-            background-color: black;
-            border-color: white;
-            
-
-            &__inputs {
-                &__after {
-                    background-color: white;
-                }
-
-                &__line {
-                    svg {
-                        line {
-                            stroke: white;
-                        }
-                    }
-                }
+        &__line {
+          svg {
+            line {
+              stroke: white;
             }
+          }
         }
+      }
+    }
+  }
+
+  .range {
+    &__input {
+      width: 100%;
     }
 
-    .range {
-        &__input {
-            width: 100%;
+    &__click {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    &__placeholder {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 2px;
+
+      &__value {
+        font-size: 1vw;
+      }
+
+      &__svg {
+        width: 1vw;
+        height: 1vw;
+        fill: rgba(0, 0, 0, 0.3);
+        transition: 0.2s;
+        cursor: pointer;
+
+        &.arrow__open {
+          transform: rotate(0.5turn);
+        }
+      }
+    }
+
+    &__open {
+      animation: slideMenu 0.2s ease-in-out;
+      background-color: white;
+      z-index: 3;
+      position: absolute;
+      top: 100%;
+      left: -0.5%;
+      width: 100.7%;
+      height: auto;
+      padding: 1.5vw 0;
+      border: 1px solid black;
+      border-radius: 0 0 0.5vw 0.5vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: none;
+
+      &__inputs {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        gap: 1vw;
+
+        &__after {
+          width: 100%;
+          flex-grow: 1;
+          min-width: 0;
+          outline: none;
+          background-color: #efefef;
+          border: none;
+          border-radius: 0.5vw;
+          padding: 0.7vw;
+          font-size: 0.8vw;
         }
 
-        &__click {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            position: absolute;
-            cursor: pointer;
-        }
-
-        &__placeholder {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin-left: 2px;
-
-            &__value {
-                font-size: 1vw;
-            }
-
-            &__svg {
-                width: 1vw;
-                height: 1vw;
-                fill: rgba(0, 0, 0, 0.3);
-                transition: 0.2s;
-                cursor: pointer;
-
-                &.arrow__open {
-                    transform: rotate(0.5turn);
-                }
-            }
-        }
-
-        &__open {
-            animation: slideMenu 0.2s ease-in-out;
-            background-color: white;
-            z-index: 3;
-            position: absolute;
-            top: 100%;
-            left: -0.5%;
-            width: 100.7%;
+        &__line {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          svg {
+            width: 1vw;
             height: auto;
-            padding: 1.5vw 0;
-            border: 1px solid black;
-            border-radius: 0 0 0.5vw 0.5vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-top: none;
-
-            &__inputs {
-                display: flex;
-                align-items: center;
-                width: 80%;
-                gap: 1vw;
-
-                &__after {
-                    width: 100%;
-                    flex-grow: 1;
-                    min-width: 0;
-                    outline: none;
-                    background-color: #EFEFEF;
-                    border: none;
-                    border-radius: 0.5vw;
-                    padding: 0.7vw;
-                    font-size: 0.8vw;
-                }
-
-                &__line {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    svg {
-                        width: 1vw;
-                        height: auto;  
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 }
 
 @media (max-width: 1024px) {
-    .custom_range {
-        .range {
-            &__placeholder {
-                &__value {
-                    font-size: 1.3vw;
-                }
-
-                &__svg {
-                    width: 1.5vw;
-                    height: 1.5vw;
-                }
-            }
-
-            &__open {
-                &__inputs {
-                    padding: 0 2vw;
-                    flex-direction: column;
-                    &__after {
-                        width: 100%;
-                        height: 3vw;
-                        font-size: 1vw;
-                        padding: 2vw 1.7vw;
-                    }
-
-                    &__line {
-                        height: 1vw;
-                        svg {
-                            width: 1vw;
-                            height: auto;  
-                        }
-                    }
-                }
-            }
+  .custom_range {
+    .range {
+      &__placeholder {
+        &__value {
+          font-size: 1.3vw;
         }
+
+        &__svg {
+          width: 1.5vw;
+          height: 1.5vw;
+        }
+      }
+
+      &__open {
+        &__inputs {
+          padding: 0 2vw;
+          flex-direction: column;
+          &__after {
+            width: 100%;
+            height: 3vw;
+            font-size: 1vw;
+            padding: 2vw 1.7vw;
+          }
+
+          &__line {
+            height: 1vw;
+            svg {
+              width: 1vw;
+              height: auto;
+            }
+          }
+        }
+      }
     }
+  }
 }
 
 @media (max-width: 768px) {
-    .custom_range {
-        &.range_is_open {
-            border-radius: 1vw 1vw 0 0;
-        }
-
-        .range {
-            &__placeholder {
-                &__value {
-                    font-size: 1.7vw;
-                }
-
-                &__svg {
-                    width: 2vw;
-                    height: 2vw;
-                }
-            }
-
-            &__open {
-                border-radius: 0 0 1vw 1vw;
-                &__inputs {
-                    &__after {
-                        border-radius: 1vw;
-                        height: 5vw;
-                        font-size: 1.5vw;
-                    }
-                }
-            }
-        }
+  .custom_range {
+    &.range_is_open {
+      border-radius: 1vw 1vw 0 0;
     }
+
+    .range {
+      &__placeholder {
+        &__value {
+          font-size: 1.7vw;
+        }
+
+        &__svg {
+          width: 2vw;
+          height: 2vw;
+        }
+      }
+
+      &__open {
+        border-radius: 0 0 1vw 1vw;
+        &__inputs {
+          &__after {
+            border-radius: 1vw;
+            height: 5vw;
+            font-size: 1.5vw;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 320px) {
-    .custom_range {
-        &.range_is_open {
-            border-radius: 1.5vw 1.5vw 0 0;
-            border-bottom: white;
-        }
-
-        .range {
-            &__placeholder {
-                &__value {
-                    font-size: 3vw;
-                }
-
-                &__svg {
-                    width: 4vw;
-                    height: 4vw;
-                }
-            }
-
-            &__open {
-                border-radius: 0 0 1.5vw 1.5vw;
-                padding: 3vw 0;
-                &__inputs {
-                    flex-direction: row;
-                    &__after {
-                        border-radius: 1.5vw;
-                        font-size: 3vw;
-                        height: 10vw;
-                    }
-
-                    &__line {
-                        height: 1vw;
-                        svg {
-                            width: 3vw;
-                            height: auto;  
-                        }
-                    }
-                }
-            }
-        }
+  .custom_range {
+    &.range_is_open {
+      border-radius: 1.5vw 1.5vw 0 0;
+      border-bottom: white;
     }
+
+    .range {
+      &__placeholder {
+        &__value {
+          font-size: 3vw;
+        }
+
+        &__svg {
+          width: 4vw;
+          height: 4vw;
+        }
+      }
+
+      &__open {
+        border-radius: 0 0 1.5vw 1.5vw;
+        padding: 3vw 0;
+        &__inputs {
+          flex-direction: row;
+          &__after {
+            border-radius: 1.5vw;
+            font-size: 3vw;
+            height: 10vw;
+          }
+
+          &__line {
+            height: 1vw;
+            svg {
+              width: 3vw;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
 }
