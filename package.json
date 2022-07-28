@@ -1,6 +1,7 @@
 {
   "name": "new_project",
   "version": "0.1.0",
+  "homepage": "https://drmus.github.io/new_project",
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
