@@ -5,6 +5,8 @@ import Paginator from "./components/UI/paginator/Paginator";
 import "./styles/App.scss";
 import axios from "axios";
 
+
+
 export default class App extends Component {
   constructor(props) {
     super(props);
