@@ -30,6 +30,7 @@
   }
 
   &__menu {
+    z-index: 10 !important;
     box-shadow: none !important;
     margin: 0 !important;
     overflow-y: hidden !important;
